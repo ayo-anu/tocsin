@@ -24,6 +24,17 @@ Start the local API on `127.0.0.1:8000`:
 .venv/bin/tocsin-api
 ```
 
+Safe local defaults require no environment configuration. Override the current settings explicitly when needed:
+
+```bash
+TOCSIN_ENVIRONMENT=local \
+TOCSIN_LOG_LEVEL=DEBUG \
+TOCSIN_APPLICATION_NAME="Tocsin Local" \
+.venv/bin/tocsin-api
+```
+
+Supported environments are `local`, `test`, and `production`. Supported log levels are `DEBUG`, `INFO`, `WARNING`, `ERROR`, and `CRITICAL`. Tocsin does not load `.env` files automatically.
+
 Verify the smoke route from another terminal:
 
 ```bash
