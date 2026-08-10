@@ -1,6 +1,6 @@
 # Tocsin
 
-Tocsin is an incrementally developed backend for operational signal monitoring and incident response. Task 1.1 provides only the installable Python project skeleton; no HTTP API or monitoring features exist yet.
+Tocsin is an incrementally developed backend for operational signal monitoring and incident response. The current increment provides a minimal HTTP application boundary and a non-production smoke route; monitoring features do not exist yet.
 
 ## Development setup
 
@@ -16,6 +16,24 @@ Run the placeholder command:
 
 ```bash
 .venv/bin/tocsin
+```
+
+Start the local API on `127.0.0.1:8000`:
+
+```bash
+.venv/bin/tocsin-api
+```
+
+Verify the smoke route from another terminal:
+
+```bash
+curl --fail --silent http://127.0.0.1:8000/smoke
+```
+
+The deterministic response is:
+
+```json
+{"message":"Tocsin API is running."}
 ```
 
 Run the focused checks:
